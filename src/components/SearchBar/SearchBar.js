@@ -7,13 +7,46 @@ const sortByOptions = {
   'Most Reviewed': 'review_count'
 };
 
+getSortByClass(sortByOption) {
+    return (this.state.sortBy == sortByOption) ? "activate" : " ";
+}
+handleSortByChange(sortByOption) {
+  this.setState({sortBy});
+}
+
+handleTermChange(e) {
+  this.setState({
+    term: e.target.value
+  });
+}
+
+handleLocationChange(e) {
+  this.setState({
+    location: e.target.value
+  });
+}
 class SearchBar extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      term: '',
+      location: '',
+      sortBy: 'best_match'
+    };
+  }
+
+
   renderSortByOptions() {
     return Object.keys(sortByOptions).map(sortByOption => {
       let sortByOptionValue = sortByOptions[sortByOption];
-      return <li key={sortByOptionValue}>{sortByOption}</li>;
+      return <li
+        onClick={handleSortByChange.bind(this,sortByOptionValue)}
+         className={getSortByClass(sortByOptionValue)}
+         key={sortByOptionValue}>{sortByOption}
+       </li>;
     });
   }
+
 
   render() {
     return (
