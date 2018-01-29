@@ -20,12 +20,12 @@ export const businesses = [business, business, business, business, business, bus
 */
 
 class App extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
       businesses: []
     };
-    this.searchYelp.bind(this);
+   this.searchYelp = this.searchYelp.bind(this);
   }
 searchYelp(term,location,sortBy) {
    Yelp.search(term,location,sortBy).then(businesses => {
