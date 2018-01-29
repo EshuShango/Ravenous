@@ -3,7 +3,7 @@ import './BusinessList.css';
 import Business from '../Business/Business';
 import businesses  from '../Business/Business';
 
-//console.log(businesses);
+console.log(businesses);
 
 class BusinessList extends React.Component {
   render() {
