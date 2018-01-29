@@ -25,4 +25,5 @@ const apiKey = 'a3yN1ipY8lYzT9AZr8MlXksvfR278dZyeebOJvv92wduPgml526P8gbx4LofvKlj
       }
     });
   }
-export default Yelp;
+}
+export default yelp;
