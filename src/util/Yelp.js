@@ -8,31 +8,22 @@ const apiKey = 'a3yN1ipY8lYzT9AZr8MlXksvfR278dZyeebOJvv92wduPgml526P8gbx4LofvKlj
        Authorization: `Bearer ${apiKey}`
 
      }
-   }).then(response => {
-      return response.json();`,{
-        headers: {
-      { Authorization: `Bearer ${apiKey}` }
-    }
   }).then(response => {
-    return response.json();
-  }).then(jsonResponse => {
-    if(jsonResponse.businesses){
-      return jsonResponse.businesses.map(business => {
-        id: business.id,
-        imageSrc: business.image_url,
-        name: business.name,
-        address: business.address,
-        city: business.city,
-        state: business.state ,
-        zipCode: business.zipCode,
-        category: business.category ,
-        rating: business.rating,
-        reviewCount: business.reviewCount
-      });
-    }
-  });
-    }
- };
-
-
+      return response.json();
+    }).then(jsonResponse => {
+      if (jsonResponse.businesses) {
+        return jsonResponse.businesses.map(business => ({
+          id: business.id,
+          imageSrc: business.image_url,
+          name: business.name,
+          address: business.location.address1,
+          city: business.location.city,
+          state: business.location.state,
+          zipCode: business.location.zip_code,
+          category: business.categories[0].title,
+          rating: business.rating,
+          reviewCount: business.review_count
+        }));
+      }
+    });
 export default yelp;
