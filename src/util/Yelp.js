@@ -1,9 +1,18 @@
 const apiKey = 'a3yN1ipY8lYzT9AZr8MlXksvfR278dZyeebOJvv92wduPgml526P8gbx4LofvKljNa4191p7HVZ_W7TjD8_CG1WsLLKjVdlNNG0rKYQE3CPPoPAgeOj6VepojUZqWnYx';
  const yelp = {
    search(term,location,sortBy) {
-      return fetch(`https://https://cors-anywhere.herokuapp.com/api.yelp.com/v3/businesses/search?term=${term}&location=${location}&sort_by=${sortBy}`,{
+      return fetch(`./src/util/Yelp.js
+Syntax error: Unexpected token (6:6)
+
+  4 |       return fetch( `https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/search?term=${term}&location=${location}&sort_by=${sortBy},` {
+  5 |         headers: {
+> 6 |       Authorization: `Bearer ${apiKey}`
+    |       ^
+  7 |     }
+  8 |   }).then(response => {
+  9 |     return response.json();`,{
         headers: {
-      {Authorization: `Bearer ${apiKey}`} 
+      { Authorization: `Bearer ${apiKey}` }
     }
   }).then(response => {
     return response.json();
@@ -27,4 +36,4 @@ const apiKey = 'a3yN1ipY8lYzT9AZr8MlXksvfR278dZyeebOJvv92wduPgml526P8gbx4LofvKlj
  };
 
 
-export default Yelp;
+export default yelp;
