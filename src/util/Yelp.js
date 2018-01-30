@@ -14,7 +14,7 @@ const apiKey = 'a3yN1ipY8lYzT9AZr8MlXksvfR278dZyeebOJvv92wduPgml526P8gbx4LofvKlj
           id: business.id,
           imageSrc: business.image_url,
           name: business.name,
-          address: business.location.address1,
+          address: business.location.address,
           city: business.location.city,
           state: business.location.state,
           zipCode: business.location.zip_code,
