@@ -1,10 +1,10 @@
 import React from 'react';
 import './App.css';
 
-import BusinessList from '../BusinessList/BusinessList.js';
-import SearchBar from '../SearchBar/SearchBar.js';
+import BusinessList from './components/BusinessList/BusinessList.js';
+import SearchBar from './components/SearchBar/SearchBar.js';
 
-import Yelp from '../util/Yelp.js';
+import Yelp from './util/Yelp.js';
 
 class App extends React.Component {
   constructor(props) {
